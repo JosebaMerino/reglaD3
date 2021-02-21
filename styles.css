@@ -1,0 +1,156 @@
+* {
+	box-sizing: border-box;
+}
+
+body h1 {
+	text-align: center;
+}
+
+body {
+	background-color: #ff79871c;
+}
+
+.celda {
+  display: flex;
+  height: 2rem;
+}
+
+
+
+.celda .delete {
+	background-color: #8298ff80;
+	display: inline-block;
+	border-radius: 5px;
+	border:1px solid black;
+	height: 100%;
+	width:2rem;
+	margin: 0;
+}
+
+.celda .input {
+  display: flex;
+  width: 45%;
+  height: 100%;
+}
+
+
+.celda .label {
+  display: inline-block;
+  width: 10%;
+  text-align: center;
+  margin: auto;
+}
+.celda .output {
+  display: flex;
+  width: 45%;
+}
+
+.celda .output .cantidad {
+  width: 50%;
+}
+
+.celda .output .ingrediente {
+  width: 50%;
+}
+
+
+
+.celda .input .cantidad{
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0.3rem;
+}
+
+.celda input.ingrediente {
+  width: 50%;
+  height: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0.3rem;
+}
+
+
+.celda + .celda {
+  margin-top: 1rem;;
+}
+
+
+div.add {
+	display: flex;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+div.add button {
+	background-color: #8298ff80;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+}
+
+
+.titulos {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.titulos div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.titulos div label {
+  font-size: 1.2rem;
+}
+
+.celda input.ingrediente {
+  background-color: transparent;
+  border: none
+}
+
+.celda label.ingrediente {
+  width: 100%;
+}
+
+/*  */
+
+.celda-añadida {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.celda-añadida div.input {
+  width: 45%;
+  display: flex;
+  flex-direction: row;
+}
+
+.celda-añadida div.input .delete {
+  width: 2rem;
+}
+
+.celda-añadida div.input .cantidad {
+  width: 50%;
+}
+
+.celda-añadida div.input .ingrediente{
+  width: 45%;
+}
+
+
+
+
+.celda-añadida label.label {
+  width: 10%;
+}
+
+.celda-añadida div.output {
+  width: 45%;
+}
+

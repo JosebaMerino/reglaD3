@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+</head>
+<body>
+  <h1>Bienvenido a reglaD3</h1>
+  <div class="main" id="main">
+    <div class="titulos">
+      <div class=""><label for=""> Receta original </label></div>
+      <div class=""> <label for=""> Receta modificada  </label> </div>
+    </div>
+    <div class="celda">
+      <div class="input">
+        <input class="cantidad" type="text" value="1" name="" id="principalIn">
+        <input type="text" class="ingrediente">
+      </div>
+        <label class="label" for=""> = </label>
+      <div class="output">
+        <input class="cantidad" type="text" value="2" name="" id="principalOut">
+        <label for="" class="ingrediente"></label>
+      </div>
+    </div>
+
+    <div class="celda">
+      <div class="input">
+        <input class="cantidad" type="text" name="" id="in1">
+        <input type="text" class="ingrediente">
+      </div>
+	  
+      <label class="label" for=""> = </label>
+      <div class="output">
+        <input class="cantidad" disabled type="text" name="" id="out1">
+        <label for="" class="ingrediente"></label>
+      </div>
+    </div>
+  </div>
+
+	<div class="add">
+		  <button onclick="addRow()"> +</button>
+	</div>
+</body>
+</html>
