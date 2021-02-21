@@ -90,9 +90,10 @@ function addRow() {
 
   let ingredienteInEl = document.createElement('input');
   ingredienteInEl.addEventListener('change', changeIngrediente);
+  ingredienteInEl.setAttribute('placeholder', 'Ingrediente...');
+
   ingredienteInEl.classList.add('ingrediente');
 
-  
   inputDivEl.appendChild(deleteBtnEl);
   inputDivEl.appendChild(inputEl);
   inputDivEl.appendChild(ingredienteInEl);
