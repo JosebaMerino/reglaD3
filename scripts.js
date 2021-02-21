@@ -24,6 +24,12 @@ function addHandlers() {
 
 }
 
+function visibilidad() {
+  let mainEL = document.querySelector('#main');
+
+  mainEL.classList.toggle('sin-original')
+}
+
 function keyupIngrediente(e) {
   let ingredienteEl = e.target;
 

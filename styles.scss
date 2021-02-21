@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  h1 {
+    text-align: center;
+  }
+
+  background-color: #ff47591c;
+}
+
+.main.sin-original {
+  div.original {
+    display: none;
+  }
+  div.modificada {
+    width: 100%;
+  }
+  .celda {
+    .input{
+      display: none;
+    }
+    label.label {
+      display: none;
+    }
+    .output {
+      width: 100%;
+    }
+  }
+}
+
+.celda {
+  display: flex;
+  height: 2rem;
+
+  .delete {
+    background-color: #8298ff80;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 100%;
+    width: 2rem;
+    margin: 0;
+  }
+
+  .input {
+    display: flex;
+    width: 45%;
+    height: 100%;
+  }
+
+  .label {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .output {
+    display: flex;
+    width: 45%;
+
+    .cantidad {
+      width: 33%;
+    }
+
+    label.ingrediente {
+      width: 66%;
+    }
+  }
+
+  .input .cantidad {
+    width: 33%;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 0.3rem;
+  }
+
+  input.ingrediente {
+    width: 66%;
+    height: 100%;
+    display: inline-block;
+    margin: 0;
+    padding: 0.3rem;
+  }
+
+  + .celda {
+    margin-top: 1rem;
+  }
+}
+
+div.add {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  button {
+    background-color: #8298ff80;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 2rem;
+    width: 2rem;
+    font-size: 1rem;
+  }
+}
+
+.titulos {
+  display: flex;
+  margin-bottom: 1rem;
+
+  div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    label {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.celda {
+  input.ingrediente {
+    background-color: transparent;
+    border: none;
+  }
+
+  label.ingrediente {
+    width: 100%;
+  }
+}
+
+/*  */
+
+.celda-añadida {
+  display: flex;
+  flex-direction: row;
+
+  div.input {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+
+    .delete {
+      width: 2rem;
+    }
+
+    .cantidad {
+      width: 33%;
+    }
+
+    .ingrediente {
+      width: 66%;
+    }
+  }
+
+  label.label {
+    width: 10%;
+  }
+
+  div.output {
+    width: 45%;
+  }
+}

@@ -1,38 +1,61 @@
+@charset "UTF-8";
 * {
-	box-sizing: border-box;
-}
-
-body h1 {
-	text-align: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
-	background-color: #ff79871c;
+  background-color: #ff47591c;
+}
+
+body h1 {
+  text-align: center;
+}
+
+.main.sin-original div.original {
+  display: none;
+}
+
+.main.sin-original div.modificada {
+  width: 100%;
+}
+
+.main.sin-original .celda .input {
+  display: none;
+}
+
+.main.sin-original .celda label.label {
+  display: none;
+}
+
+.main.sin-original .celda .output {
+  width: 100%;
 }
 
 .celda {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 2rem;
 }
 
-
-
 .celda .delete {
-	background-color: #8298ff80;
-	display: inline-block;
-	border-radius: 5px;
-	border:1px solid black;
-	height: 100%;
-	width:2rem;
-	margin: 0;
+  background-color: #8298ff80;
+  display: inline-block;
+  border-radius: 5px;
+  border: 1px solid black;
+  height: 100%;
+  width: 2rem;
+  margin: 0;
 }
 
 .celda .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 45%;
   height: 100%;
 }
-
 
 .celda .label {
   display: inline-block;
@@ -40,7 +63,10 @@ body {
   text-align: center;
   margin: auto;
 }
+
 .celda .output {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 45%;
 }
@@ -49,13 +75,11 @@ body {
   width: 33%;
 }
 
-.celda .output .ingrediente {
+.celda .output label.ingrediente {
   width: 66%;
 }
 
-
-
-.celda .input .cantidad{
+.celda .input .cantidad {
   width: 33%;
   height: 100%;
   display: inline-block;
@@ -71,37 +95,44 @@ body {
   padding: 0.3rem;
 }
 
-
 .celda + .celda {
-  margin-top: 1rem;;
+  margin-top: 1rem;
 }
 
-
 div.add {
-	display: flex;
-	justify-content: center;
-	margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
 }
 
 div.add button {
-	background-color: #8298ff80;
-    border: 1px solid black;
-    border-radius: 5px;
-    height: 2rem;
-    width: 2rem;
-    font-size: 1rem;
+  background-color: #8298ff80;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 2rem;
+  width: 2rem;
+  font-size: 1rem;
 }
 
-
 .titulos {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 1rem;
 }
 
 .titulos div {
   width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .titulos div label {
@@ -110,7 +141,7 @@ div.add button {
 
 .celda input.ingrediente {
   background-color: transparent;
-  border: none
+  border: none;
 }
 
 .celda label.ingrediente {
@@ -118,17 +149,25 @@ div.add button {
 }
 
 /*  */
-
 .celda-añadida {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
-
 
 .celda-añadida div.input {
   width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .celda-añadida div.input .delete {
@@ -139,12 +178,9 @@ div.add button {
   width: 33%;
 }
 
-.celda-añadida div.input .ingrediente{
+.celda-añadida div.input .ingrediente {
   width: 66%;
 }
-
-
-
 
 .celda-añadida label.label {
   width: 10%;
@@ -153,4 +189,4 @@ div.add button {
 .celda-añadida div.output {
   width: 45%;
 }
-
+/*# sourceMappingURL=styles.css.map */
