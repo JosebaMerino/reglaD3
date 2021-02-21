@@ -164,3 +164,20 @@ div.add {
     width: 45%;
   }
 }
+
+
+div.flotante {
+  button {
+    font-size: 2rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    border: 0.2rem solid rgb(0, 183, 255);
+    background-color: rgb(89, 208, 255);
+
+  }
+
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}

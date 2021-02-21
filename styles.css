@@ -189,4 +189,19 @@ div.add button {
 .celda-añadida div.output {
   width: 45%;
 }
+
+div.flotante {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+div.flotante button {
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  border: 0.2rem solid #00b7ff;
+  background-color: #59d0ff;
+}
 /*# sourceMappingURL=styles.css.map */
