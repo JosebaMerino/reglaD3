@@ -6,25 +6,25 @@ window.onload =  function() {
 function addHandlers() {
   let inEl = document.querySelector('#in1');
 
-  inEl.addEventListener('change', main);
+  inEl.addEventListener('keyup', main);
   
   let ingredienteListEl = document.querySelectorAll("input.ingrediente");
 
   for(let ingredienteEl of ingredienteListEl) {
-    ingredienteEl.addEventListener('change', changeIngrediente);
+    ingredienteEl.addEventListener('keyup', keyupIngrediente);
   }
 
 
   let prinInEl = document.querySelector('#principalIn');
   let prinOutEl = document.querySelector('#principalOut');
 
-  prinInEl.addEventListener('change', actualizarTodas);
-  prinOutEl.addEventListener('change', actualizarTodas);
+  prinInEl.addEventListener('keyup', actualizarTodas);
+  prinOutEl.addEventListener('keyup', actualizarTodas);
 
 
 }
 
-function changeIngrediente(e) {
+function keyupIngrediente(e) {
   let ingredienteEl = e.target;
 
   let ingredienteLblEl = ingredienteEl.closest('div.celda').querySelector('.output label.ingrediente')
@@ -85,11 +85,11 @@ function addRow() {
   celdaEl.appendChild(inputDivEl);
   
   let inputEl = document.createElement('input');
-  inputEl.addEventListener('change', main);
+  inputEl.addEventListener('keyup', main);
   inputEl.classList.add('cantidad')
 
   let ingredienteInEl = document.createElement('input');
-  ingredienteInEl.addEventListener('change', changeIngrediente);
+  ingredienteInEl.addEventListener('keyup', keyupIngrediente);
   ingredienteInEl.setAttribute('placeholder', 'Ingrediente...');
 
   ingredienteInEl.classList.add('ingrediente');
