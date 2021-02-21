@@ -46,17 +46,17 @@ body {
 }
 
 .celda .output .cantidad {
-  width: 50%;
+  width: 33%;
 }
 
 .celda .output .ingrediente {
-  width: 50%;
+  width: 66%;
 }
 
 
 
 .celda .input .cantidad{
-  width: 50%;
+  width: 33%;
   height: 100%;
   display: inline-block;
   margin: 0;
@@ -64,7 +64,7 @@ body {
 }
 
 .celda input.ingrediente {
-  width: 50%;
+  width: 66%;
   height: 100%;
   display: inline-block;
   margin: 0;
@@ -136,11 +136,11 @@ div.add button {
 }
 
 .celda-añadida div.input .cantidad {
-  width: 50%;
+  width: 33%;
 }
 
 .celda-añadida div.input .ingrediente{
-  width: 45%;
+  width: 66%;
 }
 
 
