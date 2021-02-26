@@ -133,9 +133,10 @@ function actualizarTodas() {
 
   let entrada = prinInEl.value;
   let entrada2 = prinOutEl.value;
-  let listaTodos = document.querySelectorAll('.celda .input input');
+  let listaTodos = document.querySelectorAll('.celda .input input.cantidad:not(#principalIn)');
 
   for(var inEl of listaTodos) {
-    manipulador(inEl, entrada, entrada2);
+    debugger;
+      manipulador(inEl, entrada, entrada2);
   }
 }
