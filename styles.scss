@@ -1,5 +1,11 @@
 * {
   box-sizing: border-box;
+  font-family: Handlee;
+}
+
+@font-face {
+  font-family: "Handlee";
+  src: url(./Fuentes/Handlee-Regular.ttf) format("truetype");
 }
 
 body {
@@ -30,15 +36,27 @@ body {
   }
 }
 
+
+.visibilidad {
+  padding: 0.5rem;
+  background-color: #ccf1ff;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
 .celda {
   display: flex;
   height: 2rem;
 
-  .delete {
-    background-color: #8298ff80;
+
+  .delete { 
+    background-color: #ccf1ff;
     display: inline-block;
-    border-radius: 5px;
+    border-top-left-radius: 5px; 
+    border-bottom-left-radius: 5px;
     border: 1px solid black;
+    border-right: none;
     height: 100%;
     width: 2rem;
     margin: 0;
@@ -74,6 +92,7 @@ body {
     width: 33%;
     height: 100%;
     display: inline-block;
+    border: 1px solid black;
     margin: 0;
     padding: 0.3rem;
   }
@@ -97,12 +116,12 @@ div.add {
   margin-top: 2rem;
 
   button {
-    background-color: #8298ff80;
+    background-color: #ccf1ff;
     border: 1px solid black;
-    border-radius: 5px;
-    height: 2rem;
-    width: 2rem;
-    font-size: 1rem;
+    border-radius: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 1.50rem;
   }
 }
 

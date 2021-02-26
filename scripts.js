@@ -2,7 +2,7 @@ window.onload =  function() {
   addHandlers();
   
 }
-
+ 
 function addHandlers() {
   let inEl = document.querySelector('#in1');
 
