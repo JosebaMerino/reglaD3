@@ -6,6 +6,15 @@ window.onload =  function() {
 }
 
 
+function cargarRecetaExterna() {
+  let recetaExterna = document.getElementById('recetaExterna');
+  console.log(recetaExterna.value);
+  dataManager.setData('receta', JSON.parse(recetaExterna.value));
+
+  cargarReceta();
+}
+
+
 function guardarReceta() {
 
   let listaTodos = document.querySelectorAll('.celda .input input.cantidad');
@@ -40,6 +49,14 @@ function guardarReceta() {
 }
 
 function cargarReceta() {
+
+  let celdasAñadidas = document.querySelectorAll('.celda-añadida');
+
+  for(let celda of celdasAñadidas) {
+    console.log('borrada 1')
+    celda.remove();
+  }
+
   let receta = dataManager.getData('receta');
 
 
