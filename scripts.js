@@ -6,14 +6,20 @@ window.onload =  function() {
 }
 
 
-function cargarRecetaExterna() {
+function importarReceta() {
   let recetaExterna = document.getElementById('recetaExterna');
   console.log(recetaExterna.value);
-  dataManager.setData('receta', JSON.parse(recetaExterna.value));
+  dataManager.setData('receta', (JSON.parse(atob(recetaExterna.value))));
 
   cargarReceta();
 }
 
+function exportarReceta() {
+  guardarReceta();
+
+  let recetaEl = document.getElementById('recetaExterna');
+  recetaEl.value = btoa(JSON.stringify(dataManager.getData('receta')));
+}
 
 function guardarReceta() {
 
