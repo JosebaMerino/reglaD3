@@ -2,12 +2,11 @@ let dataManager = new DataManager();
 
 window.onload =  function() {
   addHandlers();
-  
+  cargarReceta();
 }
 
 
 function guardarReceta() {
-  console.log('ejecutado prueba');
 
   let listaTodos = document.querySelectorAll('.celda .input input.cantidad');
 
@@ -41,15 +40,12 @@ function guardarReceta() {
 }
 
 function cargarReceta() {
-  debugger;
   let receta = dataManager.getData('receta');
 
 
   let principales = 2;
 
   for(let ingrediente of receta.ingredientes) {
-    console.log(ingrediente)
-
     if(principales < 1) {
       addRowValores(ingrediente.cantidad, receta.multiplicador, ingrediente.nombre);
     } else if(principales == 2) {
@@ -80,8 +76,6 @@ function cargarReceta() {
     }
     principales--;
   }
-
-  //addRowValores()
 }
 
 
@@ -181,11 +175,14 @@ function keyupIngrediente(e) {
   let ingredienteLblEl = ingredienteEl.closest('div.celda').querySelector('.output label.ingrediente')
 
   ingredienteLblEl.innerHTML = ingredienteEl.value;
+
+  guardarReceta();
 }
 
 function deleteSelf(e) {
   let celdaEl = e.target.closest('div.celda');
   celdaEl.remove();
+  guardarReceta()
 }
 
 function main(e) {
@@ -283,4 +280,5 @@ function actualizarTodas() {
   for(var inEl of listaTodos) {
       manipulador(inEl, entrada, entrada2);
   }
+  guardarReceta()
 }
