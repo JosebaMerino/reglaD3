@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ReglaD3</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="./js/classes/DataManager.js"></script>
   <script src="scripts.js"></script>
 </head>
 <body>
   <h1>Bienvenido a reglaD3</h1>
   <div class="main" id="main">
     <button class="visibilidad" onclick="visibilidad()"> Cambiar visibilidad</button>
+    <button onclick="guardarReceta()"> Guardar </button>
+
+    <button onclick="cargarReceta()"> Cargar </button>
     <div class="titulos">
       <div class="original"><label for=""> Receta original </label></div>
       <div class="modificada"> <label for=""> Receta modificada  </label> </div>

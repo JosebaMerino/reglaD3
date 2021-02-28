@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pruebas</title>
+</head>
+<body>
+  <h1> Esta es la sección de pruebas </h1>
+
+  <button onclick="main()"> Botón </button>
+</body>
+<script src="./js/classes/DataManager.js"></script>
+<script>
+
+  let dataManager = new DataManager();
+
+  window.onload = () => {
+    
+
+    let x = dataManager.getData('nueva');
+    
+    console.log(x);
+  }
+
+  function main() {
+    dataManager.setData('nueva', {clave: 'valor'})
+ }
+</script>
+</html>

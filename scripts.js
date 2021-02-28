@@ -1,7 +1,152 @@
+let dataManager = new DataManager();
+
 window.onload =  function() {
   addHandlers();
   
 }
+
+
+function guardarReceta() {
+  console.log('ejecutado prueba');
+
+  let listaTodos = document.querySelectorAll('.celda .input input.cantidad');
+
+  let cantidadIn = document.getElementById('principalIn');
+
+  let cantidadOut = document.getElementById('principalOut');
+
+  let multiplicador = cantidadOut.value / cantidadIn.value;
+
+  let ingredientes = [];
+
+
+  for(let el of listaTodos) {
+    let nombreIngrediente = el.parentNode.querySelector('.ingrediente');
+
+
+
+    // console.log({'cant': el.value, 'ingrediente' : nombreIngrediente.value});
+
+
+    let ingrediente = { cantidad: el.value, nombre: nombreIngrediente.value };
+
+    ingredientes.push(ingrediente);
+  }
+
+
+  let receta = { multiplicador: multiplicador, ingredientes: ingredientes }
+  console.log(receta);
+
+  dataManager.setData('receta', receta);
+}
+
+function cargarReceta() {
+  debugger;
+  let receta = dataManager.getData('receta');
+
+
+  let principales = 2;
+
+  for(let ingrediente of receta.ingredientes) {
+    console.log(ingrediente)
+
+    if(principales < 1) {
+      addRowValores(ingrediente.cantidad, receta.multiplicador, ingrediente.nombre);
+    } else if(principales == 2) {
+      let principalIn = document.getElementById('principalIn');
+      principalIn.value = ingrediente.cantidad;
+
+      let nombreIn = principalIn.parentNode.querySelector('.ingrediente');
+      nombreIn.value = ingrediente.nombre;
+
+      let principalOut = document.getElementById('principalOut');
+      principalOut.value = ingrediente.cantidad * receta.multiplicador;
+
+      let nombreOut = principalOut.parentNode.querySelector('.ingrediente');
+      nombreOut.innerHTML = ingrediente.nombre;
+    } else if(principales == 1) {
+      let principalIn = document.getElementById('in1');
+      principalIn.value = ingrediente.cantidad;
+
+      let nombreIn = principalIn.parentNode.querySelector('.ingrediente');
+      nombreIn.value = ingrediente.nombre;
+
+      let principalOut = document.getElementById('out1');
+      principalOut.value = ingrediente.cantidad * receta.multiplicador;
+
+      let nombreOut = principalOut.parentNode.querySelector('.ingrediente');
+      nombreOut.innerHTML = ingrediente.nombre;
+
+    }
+    principales--;
+  }
+
+  //addRowValores()
+}
+
+
+function addRowValores(cantidad, multiplicador, nombre) {
+  let mainEl = document.querySelector('div#main');
+
+  let celdaEl = document.createElement('div');
+  celdaEl.classList.add("celda-añadida");
+  celdaEl.classList.add("celda");
+  mainEl.appendChild(celdaEl);
+
+  let deleteBtnEl = document.createElement('button');
+  deleteBtnEl.addEventListener('click', deleteSelf);
+  deleteBtnEl.classList.add('delete');
+  /*celdaEl.appendChild(deleteBtnEl);*/
+
+  let deleteTxt = document.createTextNode('-');
+  deleteBtnEl.appendChild(deleteTxt);
+
+  let inputDivEl = document.createElement('div');
+  inputDivEl.classList.add('input');
+  celdaEl.appendChild(inputDivEl);
+  
+  let inputEl = document.createElement('input');
+  inputEl.addEventListener('keyup', main);
+  inputEl.classList.add('cantidad');
+  inputEl.value = cantidad;
+
+  let ingredienteInEl = document.createElement('input');
+  ingredienteInEl.addEventListener('keyup', keyupIngrediente);
+  ingredienteInEl.setAttribute('placeholder', 'Ingrediente...');
+  ingredienteInEl.value = nombre;
+
+  ingredienteInEl.classList.add('ingrediente');
+
+  inputDivEl.appendChild(deleteBtnEl);
+  inputDivEl.appendChild(inputEl);
+  inputDivEl.appendChild(ingredienteInEl);
+
+  let labelEl = document.createElement('label');
+  labelEl.classList.add('label');
+  celdaEl.appendChild(labelEl);
+
+  let labelTxt = document.createTextNode("=");
+  labelEl.appendChild(labelTxt);
+
+  let ingredienteLblEl = document.createElement('label');
+  ingredienteLblEl.classList.add('ingrediente');
+  ingredienteLblEl.innerHTML = nombre;
+
+  let outputDivEl = document.createElement('div');
+  outputDivEl.classList.add('output');
+  celdaEl.appendChild(outputDivEl);
+
+  let outputEl = document.createElement('input');
+  outputEl.setAttribute('disabled', 'disabled');
+  outputEl.classList.add('cantidad');
+  outputEl.value = cantidad * multiplicador;
+  outputDivEl.appendChild(outputEl);
+  outputDivEl.appendChild(ingredienteLblEl);
+
+}
+
+
+
  
 function addHandlers() {
   let inEl = document.querySelector('#in1');
@@ -136,7 +281,6 @@ function actualizarTodas() {
   let listaTodos = document.querySelectorAll('.celda .input input.cantidad:not(#principalIn)');
 
   for(var inEl of listaTodos) {
-    debugger;
       manipulador(inEl, entrada, entrada2);
   }
 }
